@@ -18,6 +18,7 @@ use cocoa::appkit::{
     NSWindow,
     NSWindowButton,
     NSWindowStyleMask,
+    NSWindowCollectionBehavior,
     NSApplicationActivationPolicy,
     NSApplicationPresentationOptions,
 };
@@ -916,6 +917,7 @@ impl Window2 {
                 window.setReleasedWhenClosed_(NO);
                 window.setTitle_(*title);
                 window.setAcceptsMouseMovedEvents_(YES);
+                window.setCollectionBehavior_(NSWindowCollectionBehavior::NSWindowCollectionBehaviorFullScreenAuxiliary);
 
                 if pl_attrs.titlebar_transparent {
                     window.setTitlebarAppearsTransparent_(YES);
